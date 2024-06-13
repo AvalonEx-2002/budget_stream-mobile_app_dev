@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetStream.TransactionRecordsPage">
+    <StackLayout>
+        <!-- Summary statistics label -->
+        <!-- Label x:Name="summaryLabel" FontSize="18" Margin="25" Padding="25" HorizontalTextAlignment="Center"/ -->
+
+        <Frame
+            BorderColor="White"
+            BackgroundColor="Grey"
+            HasShadow="False"
+            Margin="25,25,25,0"
+            Padding="5">
+            <Image Source="ledger_icon.png" Aspect="AspectFit" HeightRequest="50" HorizontalOptions="Center"/>
+        </Frame>
+
+        <Frame
+            BorderColor="White"
+            BackgroundColor="Grey"
+            HasShadow="False"
+            Margin="25,10,25,20"
+            Padding="5,7,5,7">
+            <Label Text="Finance Summary" FontFamily="Roboto-Bold" HorizontalTextAlignment="Center" TextColor="DarkBlue"></Label>
+        </Frame>
+
+        <!-- Total Income -->
+        <Frame BorderColor="Green" CornerRadius="5" Padding="5" Margin="25,0,25,10">
+            <!-- <Label Text="Total Income : " FontSize="16" FontAttributes="Bold" TextColor="Red" HorizontalOptions="Center" /> -->
+            <Label x:Name="totalIncomeLabel" FontSize="14" HorizontalOptions="Center" TextColor="Green" FontFamily="Roboto-Bold"/>
+        </Frame>
+
+        <!-- Total Expenses -->
+        <Frame BorderColor="Red" CornerRadius="5" Padding="5" Margin="25,0,25,10">
+            <Label x:Name="totalExpensesLabel" FontSize="14" HorizontalOptions="Center" TextColor="Red" FontFamily="Roboto-Bold"/>
+        </Frame>
+
+        <!-- Net Income -->
+        <Frame BorderColor="Goldenrod" CornerRadius="5" Padding="5" Margin="25,0,25,16">
+            <Label x:Name="netIncomeLabel" FontSize="14" HorizontalOptions="Center" TextColor="Goldenrod" FontFamily="Roboto-Bold"/>
+        </Frame>
+
+        <Frame
+            BorderColor="White"
+            BackgroundColor="Grey"
+            HasShadow="False"
+            Margin="25,10,25,0"
+            Padding="5">
+            <Image Source="transaction_records_icon.png" Aspect="AspectFit" HeightRequest="50" HorizontalOptions="Center"/>
+        </Frame>
+
+        <Frame
+            BorderColor="White"
+            BackgroundColor="Grey"
+            HasShadow="False"
+            Margin="25,10,25,12"
+            Padding="5,7,5,7">
+            <Label Text="Transaction List" FontFamily="Roboto-Bold" HorizontalTextAlignment="Center" TextColor="DarkBlue"></Label>
+        </Frame>
+
+        <!-- ListView to display transaction records -->
+        <ListView x:Name="transactionListView" SelectionMode="None" RowHeight="140" HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="25,0,25,0" BackgroundColor="Transparent" Spacing="10">
+                            <!-- Data box -->
+                            <Frame CornerRadius="10" Padding="10" BackgroundColor="#F0F0F0" VerticalOptions="Center" Margin="0,8,0,8">
+                                <StackLayout>
+                                    <Label Text="{Binding Purpose}" FontFamily="Roboto-Bold" FontSize="15" TextColor="DarkBlue" />
+                                    <BoxView HeightRequest="1" BackgroundColor="Gray" HorizontalOptions="FillAndExpand" Margin="0,5,0,5" />
+                                    <Label Text="{Binding Amount, StringFormat='Amount : RM {0:N2}'}" FontSize="14" TextColor="Black" FontFamily="Roboto-Regular"/>
+                                    <Label Text="{Binding DateTime, StringFormat='Date &amp; Time : {0:dd/MM/yyyy HH:mm:ss}'}" FontSize="14" TextColor="Black" FontFamily="Roboto-Regular"/>
+                                    <Label Text="{Binding Comments, StringFormat='Comment : {0}'}" FontSize="14" TextColor="Black" FontFamily="Roboto-Regular"/>
+
+                                    <!-- UI settings for TransactionType label -->
+                                    <Label Text="{Binding TransactionType}" FontSize="14" FontFamily="Roboto-Bold">
+                                        <Label.Triggers>
+                                            <DataTrigger TargetType="Label" Binding="{Binding TransactionType}" Value="Expense (-)">
+                                                <Setter Property="Text" Value="- $$$" />
+                                                <Setter Property="TextColor" Value="Red" />
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Label" Binding="{Binding TransactionType}" Value="Income (+)">
+                                                <Setter Property="Text" Value="+ $$$" />
+                                                <Setter Property="TextColor" Value="Green" />
+                                            </DataTrigger>
+                                        </Label.Triggers>
+                                    </Label>
+                                </StackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>

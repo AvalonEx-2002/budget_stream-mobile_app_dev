@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionName="1.0" android:installLocation="preferExternal">
+	<application android:allowBackup="true" android:supportsRtl="true" android:label="BudgetStream" android:icon="@mipmap/my_app_logo_small"></application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.INTERNET" />
+	<uses-sdk />
+</manifest>

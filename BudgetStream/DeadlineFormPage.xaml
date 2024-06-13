@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" ?>
+    
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetStream.DeadlineFormPage"
+             Title="Deadline Form">
+
+    <StackLayout Padding="25">
+        <Frame
+            BorderColor="White"
+            BackgroundColor="Grey"
+            HasShadow="False"
+            Margin="0,0,0,25"
+            Padding="5">
+            <Image Source="deadline_form_icon.png" Aspect="AspectFit" HeightRequest="50" HorizontalOptions="Center" />
+        </Frame>
+        
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Deadline Title " FontFamily="Roboto-Bold"/>
+            <Label Text="*" TextColor="Red" />
+        </StackLayout>
+
+        <Entry x:Name="nameEntry" Placeholder="Enter deadline title" />
+
+        <!-- Empty line using StackLayout with specified height -->
+        <StackLayout HeightRequest="20" BackgroundColor="Transparent" />
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Amount Due " FontFamily="Roboto-Bold"/>
+            <Label Text="(RM) " FontFamily="Roboto-Bold" TextColor="Green"/>
+            <Label Text="*" TextColor="Red" />
+        </StackLayout>
+
+        <Entry x:Name="amountEntry" Placeholder="Enter amount" Keyboard="Numeric" />
+
+        <!-- Empty line using StackLayout with specified height -->
+        <StackLayout HeightRequest="20" BackgroundColor="Transparent" />
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Date " FontFamily="Roboto-Bold"/>
+            <Label Text="*" TextColor="Red" />
+        </StackLayout>
+
+        <DatePicker x:Name="deadlineDatePicker" />
+
+        <!-- Empty line using StackLayout with specified height -->
+        <StackLayout HeightRequest="20" BackgroundColor="Transparent" />
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Transaction Type " FontFamily="Roboto-Bold"/>
+            <Label Text="*" TextColor="Red" />
+        </StackLayout>
+
+        <Picker x:Name="transactionTypePicker">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Income (+)</x:String>
+                    <x:String>Expense (-)</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <!-- Empty line using StackLayout with specified height -->
+        <StackLayout HeightRequest="20" BackgroundColor="Transparent" />
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Spacing="20">
+            <Button Text="Reset" Clicked="ResetButton_Clicked" WidthRequest="100" BackgroundColor="DarkGoldenrod" FontFamily="Roboto-Bold"/>
+            <Button Text="Submit" Clicked="SubmitButton_Clicked" WidthRequest="100" BackgroundColor="Cyan" FontFamily="Roboto-Bold"/>
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

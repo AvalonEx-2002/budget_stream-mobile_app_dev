@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetStream.FinancialTipsTricksPage"
+             Title="Financial Tips">
+
+    <ScrollView>
+        <StackLayout Padding="25" Spacing="20">
+            <Frame
+                BorderColor="White"
+                BackgroundColor="Grey"
+                HasShadow="False"
+                Margin="0,0,0,5"
+                Padding="5">
+                <Image Source="financial_tips_icon.png" Aspect="AspectFit" HeightRequest="50" HorizontalOptions="Center" />
+            </Frame>
+            
+            <!-- Financial Tips and Tricks Section -->
+            <Frame BorderColor="DarkGray" CornerRadius="10" BackgroundColor="#F0F0F0">
+                <StackLayout Padding="15" Spacing="10">
+                    <Label Text="Financial Tips / Tricks" FontFamily="Roboto-Bold" FontSize="Medium" TextColor="DarkBlue" />
+                    <BoxView HeightRequest="1" BackgroundColor="DarkGray" />
+                    <StackLayout Spacing="10">
+                        <Label Text="1. Create a Budget:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Plan your expenses and income to stay within your financial limits." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="2. Save Regularly:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Set aside a portion of your income for savings each month." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="3. Avoid Impulse Buying:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Think carefully before making purchases to avoid unnecessary expenses." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="4. Use Cashback Offers:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Take advantage of cashback offers to earn rewards on your purchases." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="5. Automate Bill Payments:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Set up automatic payments for your bills to avoid late fees and penalties." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="6. Invest Wisely:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Educate yourself about investment options and choose investments that align with your financial goals." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="7. Pay off High-Interest Debt:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Prioritize paying off high-interest debt to save money on interest charges." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="8. Review Your Finances Regularly:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Periodically review your financial situation and adjust your budget and goals as needed." TextColor="#666666" />
+                    </StackLayout>
+                    <!-- Add more financial tips and tricks here -->
+                </StackLayout>
+            </Frame>
+
+            <!-- Savings Tips Section -->
+            <Frame BorderColor="DarkGray" CornerRadius="10" BackgroundColor="#F0F0F0">
+                <StackLayout Padding="15" Spacing="10">
+                    <Label Text="Savings Tips" FontFamily="Roboto-Bold" FontSize="Medium" TextColor="DarkBlue" />
+                    <BoxView HeightRequest="1" BackgroundColor="DarkGray" />
+                    <StackLayout Spacing="10">
+                        <Label Text="1. Track Your Expenses:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Monitor your spending habits to identify areas where you can save." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="2. Use Discounts and Coupons:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Take advantage of discounts and coupons to save money on purchases." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="3. Automate Your Savings:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Set up automatic transfers to your savings account to ensure consistent saving." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="4. Reduce Unnecessary Expenses:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Identify and cut out unnecessary expenses from your budget to save more money." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="5. Meal Prep:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Plan and prepare your meals in advance to save money on dining out." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="6. Set Savings Goals:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Establish specific savings goals to motivate yourself to save more effectively." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="7. Use Energy-Efficient Appliances:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Invest in energy-efficient appliances to reduce utility bills and save money in the long run." TextColor="#666666" />
+                    </StackLayout>
+                    <StackLayout Spacing="10">
+                        <Label Text="8. Shop Secondhand:" FontFamily="Roboto-Bold" TextColor="#333333" />
+                        <Label Text="Consider buying gently used items instead of new ones to save money on purchases." TextColor="#666666" />
+                    </StackLayout>
+                    <!-- Add more savings tips here -->
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

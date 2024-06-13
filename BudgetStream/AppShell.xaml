@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    
+<Shell
+    x:Class="BudgetStream.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:BudgetStream"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.BackgroundColor="DarkBlue"
+    Shell.TitleColor="White"
+    
+    Title="BudgetStream">
+
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout>
+            <Label Text="M E N U" 
+               HeightRequest="50" 
+               HorizontalTextAlignment="Center" 
+               VerticalTextAlignment="Center" 
+               BackgroundColor="DarkBlue" 
+               FontFamily="Roboto-Bold"
+               FontAttributes="Bold" />
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+    <ShellContent
+    Title="Transaction Form"
+    ContentTemplate="{DataTemplate local:MainPage}"
+    Route="MainPage"
+    Icon="transaction_form_icon.png" />
+
+    <ShellContent
+    Title="Deadline Form"
+    ContentTemplate="{DataTemplate local:DeadlineFormPage}"
+    Route="DeadlineFormPage"
+    Icon="deadline_form_icon.png" />
+
+    <ShellContent
+    Title="Transaction Records"
+    ContentTemplate="{DataTemplate local:TransactionRecordsPage}"
+    Route="TransactionRecordsPage"
+    Icon="transaction_records_icon.png" />
+
+    <ShellContent
+    Title="Deadline Records"
+    ContentTemplate="{DataTemplate local:DeadlineRecordsPage}"
+    Route="DeadlineRecordsPage"
+    Icon="deadline_records_icon.png" />
+
+    <ShellContent
+    Title="Financial Tips"
+    ContentTemplate="{DataTemplate local:FinancialTipsTricksPage}"
+    Route="FinancialTipsTricksPage"
+    Icon="financial_tips_icon.png" />
+
+    <ShellContent
+    Title="About"
+    ContentTemplate="{DataTemplate local:AboutPage}"
+    Route="AboutPage"
+    Icon="about_icon.png" />
+
+</Shell>

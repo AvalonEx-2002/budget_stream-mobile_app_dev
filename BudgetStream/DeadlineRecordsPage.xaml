@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetStream.DeadlineRecordsPage"
+             Title="Deadline Records">
+
+    <!-- Removing the ScrollView and adjusting the layout -->
+    <StackLayout Padding="25" Spacing="25">
+        <Frame
+            BorderColor="White"
+            BackgroundColor="Grey"
+            HasShadow="False"
+            Padding="5">
+            <Image Source="deadline_records_icon.png" Aspect="AspectFit" HeightRequest="50" HorizontalOptions="Center" />
+        </Frame>
+        
+        <!-- ListView to display deadline records -->
+        <ListView x:Name="deadlineListView" VerticalOptions="FillAndExpand" RowHeight="220" SelectionMode="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10" BackgroundColor="Transparent" Spacing="10">
+                            <!-- Title box -->
+                            <Frame CornerRadius="10" Padding="10" BackgroundColor="#F0F0F0">
+                                <Label Text="{Binding Title}" FontFamily="Roboto-Bold" FontSize="15" TextColor="DarkBlue" />
+
+                            </Frame>
+                            <!-- Data box -->
+                            <Frame CornerRadius="10" Padding="10" BackgroundColor="#E0E0E0">
+                                <StackLayout Spacing="5">
+                                    <Label Text="{Binding AmountDue, StringFormat='Amount Due : RM {0:N2}'}" FontSize="14" TextColor="Black" FontFamily="Roboto-Regular"/>
+                                    <Label Text="{Binding DeadlineDate, StringFormat='Deadline Date : {0:d}'}" FontSize="14" TextColor="Black" FontFamily="Roboto-Regular"/>
+
+                                    <!-- UI settings for TransactionType label -->
+                                    <Label Text="{Binding TransactionType}" FontSize="14" FontFamily="Roboto-Bold">
+                                        <Label.Triggers>
+                                            <DataTrigger TargetType="Label" Binding="{Binding TransactionType}" Value="Cash Deduction">
+                                                <Setter Property="TextColor" Value="Red" />
+                                            </DataTrigger>
+                                            <DataTrigger TargetType="Label" Binding="{Binding TransactionType}" Value="Cash Addition">
+                                                <Setter Property="TextColor" Value="Green" />
+                                            </DataTrigger>
+                                        </Label.Triggers>
+                                    </Label>
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Button for deleting record -->
+                            <ImageButton 
+                                IsEnabled="True"
+                                VerticalOptions="End"
+                                HorizontalOptions="End"
+                                Source="delete_icon.png"
+                                MaximumHeightRequest="45"
+                                CommandParameter="{Binding Key}"
+                                Clicked="DeleteRecordButton_Clicked"
+                                />
+                            
+                            <!-- Implementation using normal button
+                            <Button Text="Delete" Clicked="DeleteRecordButton_Clicked" CommandParameter="{Binding Key}" ImageSource="delete_icon.png"
+                            BackgroundColor="Red" TextColor="Black" FontSize="12" CornerRadius="15" FontAttributes="Bold" HorizontalOptions="End"/> -->
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+
+
+</ContentPage>

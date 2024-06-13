@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetStream.AboutPage"
+             Title="About Page">
+    <ScrollView>
+        <StackLayout Padding="25" Spacing="20" VerticalOptions="CenterAndExpand">
+            <Frame
+                BorderColor="White"
+                BackgroundColor="Grey"
+                HasShadow="False"
+                Margin="0,0,0,15"
+                Padding="5">
+                <Image Source="about_icon.png" Aspect="AspectFit" HeightRequest="50" HorizontalOptions="Center"/>
+            </Frame>
+            <!-- Image of Yourself -->
+            <Frame
+                BorderColor="White"
+                BackgroundColor="Grey"
+                HasShadow="False"
+                Padding="5">
+                <Image Source="profile_pic.jpeg" Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+            </Frame>
+
+            <!-- Developer Description -->
+            <Label Text="About the Developer"
+               FontSize="20"
+               FontAttributes="Bold"
+               FontFamily="Roboto-Bold"
+               HorizontalOptions="Center" />
+
+            <Label Text="Hi! I'm Muhammad Aiman Bin Mat Saad, a passionate student at UNITEN dedicated to crafting user-centric applications. With expertise in Computer Science (Software Engineering), I strive to create intuitive and efficient solutions that simplify tasks and drive positive change. Interested in connecting ? Whatsapp me at 010-4520031 !"
+               FontSize="14"
+               FontFamily="Roboto-Regular"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="CenterAndExpand"
+               TextColor="Grey" />
+
+            <!-- App Logo -->
+            <Frame
+                Margin="0,8,0,0"
+                BorderColor="White"
+                BackgroundColor="Grey"
+                HasShadow="False"
+                Padding="5">
+                <Image Source="app_logo_slogan.png" Aspect="AspectFit" HeightRequest="100" HorizontalOptions="Center" />
+            </Frame>
+
+            <!-- App Description -->
+            <Label Text="About the App"
+               FontSize="20"
+               FontAttributes="Bold"
+               FontFamily="Roboto-Bold"
+               HorizontalOptions="Center" />
+
+            <Label Text="BudgetStream is a simple yet effective mobile application that helps users keep track of their finances more efficiently. Users can record transactions, set financial deadlines, and learn more about financial management thanks to intuitive features and user-friendly interfaces."
+               FontSize="14"
+               FontFamily="Roboto-Regular"
+               HorizontalTextAlignment="Center"
+               HorizontalOptions="Center"
+               TextColor="Grey" />
+        </StackLayout>
+
+    </ScrollView>
+    
+</ContentPage>
